@@ -62,6 +62,16 @@ class LinkedList:
         leader = self.traverse(index - 1)
         unwanted_node = leader.next
         leader.next = unwanted_node.next
+        
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current:
+            temp = current.next
+            current.next = prev
+            prev = current
+            current = temp
+        self.head = prev
 
 
 ll = LinkedList()
@@ -80,4 +90,4 @@ ll.length()
 ll.delete(4)
 ll.printList()
 ll.length()
-# https://github.com/theja-m/Data-Structures-and-Algorithms
+
